@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    saludando
+    <!--
+    <h1>Hola hay viajes para {{lugar}} y dura {{dias}}, es de pension {{pension}},</h1>
+    -->
+    <h2> 
+        {{objetos}}
+    </h2>
+        {% for objeto in objetos%}
+            <h3>Usted puede viajar a {{objeto.lugar}} {{objeto.dias}} dias con {{objeto.pension}} pension</h3>
+        {%endfor%}
+    
 </body>
 </html>
