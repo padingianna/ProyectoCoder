@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Destino
+from .forms import CrearDestinoForm
 
 def saludo(request):
     return HttpResponse('respeta o proceso')
@@ -24,3 +25,36 @@ def versaludo(request):
 
 def prueba(request):
     return render(  request, 'index1.html')
+
+""" Forma 1 de formulario
+def ingreso(request):
+    if request.method == 'POST':
+        
+        destino = Destino(lugar=request.POST['destino'],dias=request.POST['dias'],pension=request.POST['pension'])
+        
+        destino.save()
+
+        return render(request, 'index.html')
+
+    return render(  request, 'formulario.html')
+"""
+
+def ingreso(request):
+    if request.method == 'POST':
+
+        formulario = CrearDestinoForm(request.POST)
+
+        if formulario.is_valid():
+
+            form_limpio = formulario.cleaned_data
+        
+            destino = Destino(lugar=form_limpio['destino'],dias=form_limpio['dias'],pension=form_limpio['pension'])
+            
+            destino.save()
+
+            return render(request, 'index.html')
+
+    else:
+        formulario = CrearDestinoForm()
+
+    return render(  request, 'formulario.html',{'formulario':formulario})
