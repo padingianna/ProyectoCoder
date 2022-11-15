@@ -14,5 +14,20 @@
 
 </form>
 
+{% if lugares %} 
+
+    <ul>
+    {% for lugar2 in lugares %}
+        <li> Viaja a {{lugar2.lugar}} tantos {{lugar2.dias}} dias</li>
+    {% endfor %}  <ul>
+{% else%}
+    <p> No hay datos</p>
+{% endif %}
+
+
+
+
+
+
 {% endblock %}
 

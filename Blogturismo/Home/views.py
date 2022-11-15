@@ -61,7 +61,14 @@ def ingreso(request):
 
 
 def buscar(request):
-
-
     
-    return render(  request, 'buscar.html')
+    if request.GET.get ('buscardestino',  False):
+        lugar1 = request.GET['buscardestino']
+        lugares = Destino.objects.filter(lugar__icontains= lugar1)
+    
+        return render( request, 'buscar.html', {'lugares':lugares})
+    
+    else:
+        respuesta = 'No hay datos'
+
+        return render(request, 'buscar.html',{'respuesta':respuesta})
