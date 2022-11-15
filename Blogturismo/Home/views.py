@@ -58,3 +58,10 @@ def ingreso(request):
         formulario = CrearDestinoForm()
 
     return render(  request, 'formulario.html',{'formulario':formulario})
+
+
+def buscar(request):
+
+
+    
+    return render(  request, 'buscar.html')
