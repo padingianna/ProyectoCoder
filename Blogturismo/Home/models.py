@@ -1,9 +1,40 @@
 from django.db import models
+import datetime
 
-# Create your models here.
+# Clase de destino disponibles para viajar
 class Destino (models.Model):
     
-    lugar = models.CharField(max_length=40)
-    dias = models.IntegerField()
-    pension = models.CharField(max_length=40)
+    d_lugar = models.CharField(max_length=40)
+    d_dias = models.IntegerField()
+    d_pension = models.CharField(max_length=40)
+    d_salida = models.DateField()
+    d_regreso= models.DateField()
 
+# Clase de hoteles disponibles para alojarse
+class Hotel (models.Model):
+    
+    h_lugar = models.CharField(max_length=40)
+    h_dias = models.IntegerField()
+    h_pension = models.CharField(max_length=40)
+    h_habitacion = models.CharField(max_length=40)
+    h_salida = models.DateField()
+    h_regreso= models.DateField()
+
+# Clase de excursiones disponibles para realizar
+class Excursiones (models.Model):
+    
+    e_lugar = models.CharField(max_length=40)
+    e_dias = models.IntegerField()
+    e_actividad = models.CharField(max_length=40)
+    e_dificultad = models.CharField(max_length=40)
+    e_salida = models.DateField()
+    e_regreso= models.DateField()
+
+
+class CrearDestino (models.Model):
+    
+    cd_lugar = models.CharField(max_length=40)
+    cd_dias = models.IntegerField()
+    cd_pension = models.CharField(max_length=40)
+    cd_salida = models.DateField()
+    cd_regreso= models.DateField()

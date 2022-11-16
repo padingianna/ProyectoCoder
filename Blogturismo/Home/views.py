@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Destino
+from .models import *
 from .forms import CrearDestinoForm
 
 def saludo(request):
@@ -12,14 +12,14 @@ def index1(request):
 
 """
 def versaludo(request):
-    destino= Destino(lugar = 'BSAS', dias = 4, pension = 'Completa')
-    return render( request, 'saludo.html', { 'lugar': destino.lugar, 'dias': destino.dias, 'pension': destino.pension})
+    destino= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
+    return render( request, 'saludo.html', { 'lugar': destino.d_lugar, 'dias': destino.d_dias, 'pension': destino.d_pension})
 """
 
 def versaludo(request):
-    destino1= Destino(lugar = 'BSAS', dias = 4, pension = 'Completa')
-    destino2= Destino(lugar = 'Misiones', dias = 1, pension = 'Media')
-    destino3= Destino(lugar = 'Corrientes', dias = 3, pension = 'No')
+    destino1= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
+    destino2= Destino(d_lugar = 'Misiones', d_dias = 1, d_pension = 'Media')
+    destino3= Destino(d_lugar = 'Corrientes', d_dias = 3, d_pension = 'No')
     return render( request, 'saludo.html', {'objetos':[destino1,destino2,destino3]} )
 
 
@@ -30,7 +30,7 @@ def prueba(request):
 def ingreso(request):
     if request.method == 'POST':
         
-        destino = Destino(lugar=request.POST['destino'],dias=request.POST['dias'],pension=request.POST['pension'])
+        destino = Destino(d_lugar=request.POST['destino'],d_dias=request.POST['dias'],d_pension=request.POST['pension'])
         
         destino.save()
 
@@ -48,7 +48,11 @@ def ingreso(request):
 
             form_limpio = formulario.cleaned_data
         
-            destino = Destino(lugar=form_limpio['destino'],dias=form_limpio['dias'],pension=form_limpio['pension'])
+            destino = CrearDestino(cd_lugar=form_limpio['destino'],
+                        cd_dias=form_limpio['dias'],
+                        cd_pension=form_limpio['pension'], 
+                        cd_salida=form_limpio['pension'],
+                        cd_regreso=form_limpio['pension'])
             
             destino.save()
 
@@ -64,7 +68,7 @@ def buscar(request):
     
     if request.GET.get ('buscardestino',  False):
         lugar1 = request.GET['buscardestino']
-        lugares = Destino.objects.filter(lugar__icontains= lugar1)
+        lugares = Destino.objects.filter(d_lugar__icontains= lugar1)
     
         return render( request, 'buscar.html', {'lugares':lugares})
     
@@ -72,3 +76,7 @@ def buscar(request):
         respuesta = 'No hay datos'
 
         return render(request, 'buscar.html',{'respuesta':respuesta})
+
+
+
+        #terminar lo de d_
