@@ -1,7 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import CrearDestinoForm
+from datetime import datetime
+
+
+
 
 def saludo(request):
     return HttpResponse('respeta o proceso')
@@ -48,11 +52,13 @@ def ingreso(request):
 
             form_limpio = formulario.cleaned_data
         
-            destino = CrearDestino(cd_lugar=form_limpio['destino'],
+            destino = CrearDestino(cd_lugar=form_limpio['lugar'],
                         cd_dias=form_limpio['dias'],
                         cd_pension=form_limpio['pension'], 
-                        cd_salida=form_limpio['pension'],
-                        cd_regreso=form_limpio['pension'])
+                        cd_salida=form_limpio['salida'],
+                        cd_regreso=form_limpio['regreso'])
+            
+
             
             destino.save()
 
@@ -76,7 +82,3 @@ def buscar(request):
         respuesta = 'No hay datos'
 
         return render(request, 'buscar.html',{'respuesta':respuesta})
-
-
-
-        #terminar lo de d_
