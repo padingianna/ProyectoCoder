@@ -1,6 +1,6 @@
 from django.db import models
 import datetime
-
+#AGREGAR PRECIO A LOS MODELOS
 # Clase de destino disponibles para viajar
 class Destino (models.Model):
     
