@@ -8,14 +8,32 @@
 </head>
 <body>
     <!--
-    <h1>Hola hay viajes para {{lugar}} y dura {{dias}}, es de pension {{pension}},</h1>
-    -->
-    <h2> 
-        {{objetos}}
-    </h2>
-        {% for objeto in objetos%}
+    <h1>Hola hay viajes para {{lugar}} sy dura {{dias}}, es de pension {{pension}},</h1>
+    -->ss
+    
+    <table class ='table table-bordered' >
+        <thead>
+            <tr>
+                <td>Destino</td>
+                <td>Cantidad de dias</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if lugares %}
+            {% for lugar in lugares %}
+            <tr>
+                <td>{{lugar.d_lugar}}</td>
+                <td>{{lugar.d_dias}}</td>
+            </tr>        
+            {%endfor%}
+            {% endif %}
+        </tbody>
+    </table>
+
+        
+    <!--   {% for objeto in objetos%}
             <h3>Usted puede viajar a {{objeto.d_lugar}} {{objeto.d_dias}} dias con {{objeto.d_pension}} pension</h3>
-        {%endfor%}
+        {%endfor%}-->
     
 </body>
 </html>

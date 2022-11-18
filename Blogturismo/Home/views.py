@@ -17,10 +17,16 @@ def versaludo(request):
 """
 
 def versaludo(request):
-    destino1= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
+        lugares = Destino.objects.all()
+        
+    
+        return render( request, 'saludo.html', {'lugares':lugares})
+
+
+"""destino1= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
     destino2= Destino(d_lugar = 'Misiones', d_dias = 1, d_pension = 'Media')
-    destino3= Destino(d_lugar = 'Corrientes', d_dias = 3, d_pension = 'No')
-    return render( request, 'saludo.html', {'objetos':[destino1,destino2,destino3]} )
+    destino3= Destino(d_lugar = 'Corrientes', d_dias = 3, d_pension = 'No')*/
+    return render( request, 'saludo.html', {'objetos':[destino1,destino2,destino3]} )"""
 
 def prueba(request):
     return render(  request, 'index1.html')
