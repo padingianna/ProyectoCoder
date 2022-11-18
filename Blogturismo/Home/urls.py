@@ -22,7 +22,9 @@ urlpatterns = [
     path( 'saludo/', views.saludo,name='saludo'),
     path( 'versaludo/', views.versaludo,name='versaludo'),
     path('prueba', views.prueba,name='prueba'),
-    path('Ingreso', views.ingreso,name='ingreso'),
+    path('Crear tu Destino', views.creardestino,name='Crear tu Destino'),
+    path('Crear tu Excursion', views.crearexcursion,name='Crear tu Excursion'),
+    path('Crear tu Hotel', views.crearhotel,name='Crear tu Hotel'),
     path('Buscar', views.buscar,name='buscar'),
 
 ]

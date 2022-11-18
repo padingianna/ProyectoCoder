@@ -41,3 +41,21 @@ class CrearDestino (models.Model):
     cd_pension = models.CharField(max_length=40)
     cd_salida = models.DateField()
     cd_regreso= models.DateField()
+
+class CrearExcursion (models.Model):
+    
+    ce_lugar = models.CharField(max_length=40)
+    ce_dias = models.IntegerField()
+    ce_actividad = models.CharField(max_length=40)
+    ce_dificultad = models.CharField(max_length=40)
+    ce_salida = models.DateField()
+    ce_regreso= models.DateField()
+
+class CrearHotel (models.Model):
+    
+    ch_lugar = models.CharField(max_length=40)
+    ch_dias = models.IntegerField()
+    ch_pension = models.CharField(max_length=40)
+    ch_habitacion = models.CharField(max_length=40)
+    ch_salida = models.DateField()
+    ch_regreso= models.DateField()
