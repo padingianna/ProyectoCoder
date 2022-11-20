@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block codigoDinamico %}
+
+
+
+<form action="" method="get">
+
+    <input type="text" name="buscardestino" id="buscardestino">
+    
+    <button type="submit" value="Buscar">Buscar</button>
+    
+
+</form>
+<!--
+{% if lugares %} 
+
+    <ul>
+    {% for lugar2 in lugares %}
+        <li> Viaja a {{lugar2.d_lugar}} tantos {{lugar2.d_dias}} dias</li>
+    {% endfor %}  <ul>
+{% else%}
+    <p> No hay datos</p>
+{% endif %}
+    -->  
+{% if lugares %} 
+    <table class ='table table-bordered' >
+        <thead>
+            <tr>
+                <td>Destinos</td>
+                <td>Cantidad de dias</td>
+                <td>Tipo de Pension</td>
+                <td>Fecha de Salida</td>
+                <td>Fecha de Regreso</td>
+                <td>Costo en Dolares</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if lugares %}
+            {% for lugar in lugares %}
+            <tr>
+                <td>{{lugar.d_lugar}}</td>
+                <td>{{lugar.d_dias}}</td>
+                <td>{{lugar.d_pension}}</td>
+                <td>{{lugar.d_salida}}</td>
+                <td>{{lugar.d_regreso}}</td>
+                <td>{{lugar.d_costo}}</td>
+            </tr>        
+            {%endfor%}
+            {% endif %}
+
+        </tbody>
+    </table>
+{% endif %}
+
+        
+    <!--   {% for objeto in objetos%}
+            <h3>Usted puede viajar a {{objeto.d_lugar}} {{objeto.d_dias}} dias con {{objeto.d_pension}} pension</h3>
+        {%endfor%}-->
+    
+
+
+{% endblock %}

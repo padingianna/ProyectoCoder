@@ -15,13 +15,13 @@ def versaludo(request):
     destino= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
     return render( request, 'saludo.html', { 'lugar': destino.d_lugar, 'dias': destino.d_dias, 'pension': destino.d_pension})
 """
-
-def versaludo(request):
+"""
+def destinos(request):
         lugares = Destino.objects.all()
         
     
-        return render( request, 'saludo.html', {'lugares':lugares})
-
+        return render( request, 'destinos.html', {'lugares':lugares})
+"""
 
 """destino1= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
     destino2= Destino(d_lugar = 'Misiones', d_dias = 1, d_pension = 'Media')
@@ -71,13 +71,13 @@ def creardestino(request):
 def buscar(request):
     
     if request.GET.get ('buscardestino',  False):
-        lugar1 = request.GET['buscardestino']
-        lugares = Destino.objects.filter(d_lugar__icontains= lugar1)
+        lugar = request.GET['buscardestino']
+        lugares = Destino.objects.filter(d_lugar__icontains= lugar)
     
-        return render( request, 'buscar.html', {'lugares':lugares})
+        return render( request, 'destinos.html', {'lugares':lugares})
     
     else:
-        respuesta = 'No hay datos'
+        respuesta = 'No hay datos'  
 
         return render(request, 'buscar.html',{'respuesta':respuesta})
 
