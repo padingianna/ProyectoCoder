@@ -1,10 +1,7 @@
-{% extends 'index.html' %}
+{% extends 'experiencia.html' %}
 {% load static %}
 
-{% block codigoDinamico %}
-
-
-
+{% block ventas %}
 <form action="" method="get">
 
     <input type="text" name="buscardestino" id="buscardestino">
@@ -54,11 +51,11 @@
     </table>
 {% endif %}
 
-        
-    <!--   {% for objeto in objetos%}
-            <h3>Usted puede viajar a {{objeto.d_lugar}} {{objeto.d_dias}} dias con {{objeto.d_pension}} pension</h3>
-        {%endfor%}-->
     
+<!--   {% for objeto in objetos%}
+        <h3>Usted puede viajar a {{objeto.d_lugar}} {{objeto.d_dias}} dias con {{objeto.d_pension}} pension</h3>
+    {%endfor%}-->
+
 
 
 {% endblock %}

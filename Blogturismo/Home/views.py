@@ -134,3 +134,12 @@ def crearhotel(request):
         hotelform = CrearHotelForm()
 
     return render(  request, 'hotelform.html',{'hotelform':hotelform})
+
+
+
+
+def crearexperiencia(request):
+    return render(  request, 'crearexperiencia.html')
+
+def experiencia(request):
+    return render(  request, 'experiencia.html')

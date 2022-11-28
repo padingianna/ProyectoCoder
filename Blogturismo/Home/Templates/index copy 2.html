@@ -3,7 +3,6 @@
     <head>
         {% load static %}
         <meta charset="utf-8" />
-        <title>Turismo Prattos</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -12,16 +11,12 @@
         <link href='{% static 'Home/css/styles.css' %}' rel="stylesheet" />
         
     </head>
-    <header class="py-5 bg-opacity-10 " style="background-image: url('static/Home/assets/imagenes/TITULO.png'); background-repeat: no-repeat; background-size: 100% 100%">
-
-        <div class="container">
-            <div class="text-center my-5">
-            
-            </div>
-        </div>
+    <header>
+        <title> Turismo Prattos</title>
     </header>
     
     <body>
+        
         <!-- Imagen de fondo-->
         
                 <style>
@@ -32,20 +27,20 @@
                         background-size: 100% 100%;
                         }
                 </style>
-        
+                
         
         <nav class="navbar navbar-dark bg-dark static-top">
-            {% block botones %}
             
                 <div class="container">
                     <a class="navbar-brand" href={% url 'Home' %}>Home</a>
-                    <a class="navbar-brand" href={% url 'Elige tu Experiencia' %}>Elige tu Experiencia</a>
-                    <a class="navbar-brand" href={% url 'Crear tu Experiencia' %}>Crear tu Experiencia</a>
+                    <a class="navbar-brand" href={% url 'Destinos' %}>Destinos</a>
+                    <a class="navbar-brand" href={% url 'Crear tu Destino' %}>Crear tu Destino</a>
+                    <a class="navbar-brand" href={% url 'Crear tu Excursion' %}>Crear tu Excursion</a>
+                    <a class="navbar-brand" href={% url 'Crear tu Hotel' %}>Crear tu Hotel</a>
+                    <a class="navbar-brand" href={% url 'buscar' %}>Buscar</a>
                     <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/">Ingresar</a>
                 </div>
             
-
-            {% endblock %}
         </nav>
         <!-- encabezado con la busqueda-->
         <header> 
@@ -56,51 +51,37 @@
         </header>
         
         <!-- iconos con pequena informacion-->
-        <section class="call-to-action text-white text-center" >
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+        <section class="features-icons bg-light text-center">
 
             {% block codigoDinamico %}
-                    dsgshgaa
+        dsgshgaa
         
             {% endblock %}
-            <!--<div class="container">
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-2">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
-                            
                             <h3>Fully Responsive</h3>
                             <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-                            
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-2">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
-                            
                             <h3>Bootstrap 5 Ready</h3>
                             <p class="lead mb-0">Featuring the latest build of the new Bootstrap 5 framework!</p>
-                            
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="features-icons-item mx-auto mb-0 mb-lg-2">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
-                            
                             <h3>Easy to Use</h3>
                             <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-                            
                         </div>
-                    </div>
-                </div>
-                </div>-->
                     </div>
                 </div>
             </div>
-        
         </section>
         <!-- texto e imagenes-->
         <section class="showcase">

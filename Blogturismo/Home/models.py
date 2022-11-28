@@ -9,7 +9,7 @@ class Destino (models.Model):
     d_pension = models.CharField(max_length=40)
     d_salida = models.DateField()
     d_regreso= models.DateField()
-    d_costo = models.BooleanField(max_length=20)
+    d_costo = models.DecimalField(max_digits=10,decimal_places=3)
 
 # Clase de hoteles disponibles para alojarse
 class Hotel (models.Model):
@@ -20,7 +20,7 @@ class Hotel (models.Model):
     h_habitacion = models.CharField(max_length=40)
     h_salida = models.DateField()
     h_regreso= models.DateField()
-    h_costo = models.BooleanField(max_length=20)
+    h_costo = models.DecimalField(max_digits=10,decimal_places=3)
 
 # Clase de excursiones disponibles para realizar
 class Excursiones (models.Model):
@@ -31,7 +31,7 @@ class Excursiones (models.Model):
     e_dificultad = models.CharField(max_length=40)
     e_salida = models.DateField()
     e_regreso= models.DateField()
-    e_costo = models.BooleanField(max_length=20)
+    e_costo = models.DecimalField(max_digits=10,decimal_places=3)
 
 
 class CrearDestino (models.Model):

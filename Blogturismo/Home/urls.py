@@ -26,5 +26,8 @@ urlpatterns = [
     path('Crear tu Excursion', views.crearexcursion,name='Crear tu Excursion'),
     path('Crear tu Hotel', views.crearhotel,name='Crear tu Hotel'),
     path('Buscar', views.buscar,name='buscar'),
+    path('crearexperiencia', views.crearexperiencia,name='Crear tu Experiencia'),
+    path('experiencia', views.experiencia,name='Elige tu Experiencia'),
+
 
 ]
