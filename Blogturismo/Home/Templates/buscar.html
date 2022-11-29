@@ -1,10 +1,26 @@
-{% extends 'experiencia.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
-{% block ventas %}
+{% block titulo %}
+<h1 class="mb-0">Disfruta tu proximo Destino!</h1>
+{% endblock %}
+
+
+{% block subtitulo %}
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+    >Conoce nuestras ofertas pensadas para vos.</h1>
+
+    
+{% endblock %}
+
+
+
+
+
+{% block contenido %}
         
-        
-        
+<section class="showcase text-center" style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); ">        
+    <h3>Ingresa la ciudad a la que quieres viajar</h3>
 <form action="" method="get">
 
     <input type="text" name="buscardestino" id="buscardestino">
@@ -13,6 +29,7 @@
     
 
 </form>
+</section>
 
 
 

@@ -58,6 +58,8 @@ def creardestino(request):
                         cd_pension=form_limpio['pension'], 
                         cd_salida=form_limpio['salida'],
                         cd_regreso=form_limpio['regreso'])
+
+                        
             
             destino.save()
 
@@ -146,3 +148,8 @@ def experiencia(request):
 
 def nosotros(request):
     return render(  request, 'nosotros.html')
+
+
+
+
+    

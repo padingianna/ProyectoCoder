@@ -36,11 +36,13 @@ class Excursiones (models.Model):
 
 class CrearDestino (models.Model):
     
+    cd_nombre = models.CharField(max_length=40)
+    cd_apellido = models.CharField(max_length=40)
+    cd_numero = models.IntegerField()
+    cd_mail = models.CharField(max_length=100)
     cd_lugar = models.CharField(max_length=40)
-    cd_dias = models.IntegerField()
-    cd_pension = models.CharField(max_length=40)
     cd_salida = models.DateField()
-    cd_regreso= models.DateField()
+
 
 class CrearExcursion (models.Model):
     
