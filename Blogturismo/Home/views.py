@@ -143,3 +143,6 @@ def crearexperiencia(request):
 
 def experiencia(request):
     return render(  request, 'experiencia.html')
+
+def nosotros(request):
+    return render(  request, 'nosotros.html')
