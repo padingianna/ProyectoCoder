@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-0">Disfruta de tu proxima Excursion!</h1>
+{% endblock %}
+
+
+{% block subtitulo %}
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+    >Conoce nuestras ofertas pensadas para vos.</h1>
+
+    
+{% endblock %}
+
+
+
+
+
+{% block contenido %}
+        
+<section class="showcase text-center" style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); ">        
+    <h3>Ingresa la ciudad donde quieres realizar la Actividad</h3>
+<form action="" method="get">
+
+    <input type="text" name="buscarexcursion" id="buscarexcursion">
+    
+    <button type="submit" value="Buscar">Buscar</button>
+    
+
+</form>
+</section>
+
+
+
+{% endblock %}
+

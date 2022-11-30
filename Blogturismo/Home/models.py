@@ -30,7 +30,7 @@ class Excursiones (models.Model):
     e_actividad = models.CharField(max_length=40)
     e_dificultad = models.CharField(max_length=40)
     e_salida = models.DateField()
-    e_regreso= models.DateField()
+    e_regreso = models.DateField()
     e_costo = models.DecimalField(max_digits=10,decimal_places=3)
 
 
@@ -83,3 +83,13 @@ class SolicitudHotel (models.Model):
     sh_lugar = models.CharField(max_length=40)
     sh_hotel = models.CharField(max_length=40)
     sh_ingreso = models.DateField()
+
+class SolicitudExcursion (models.Model):
+    
+    se_nombre = models.CharField(max_length=40)
+    se_apellido = models.CharField(max_length=40)
+    se_numero = models.IntegerField()
+    se_mail = models.CharField(max_length=100)
+    se_lugar = models.CharField(max_length=40)
+    se_actividad = models.CharField(max_length=40)
+    se_salida = models.DateField()

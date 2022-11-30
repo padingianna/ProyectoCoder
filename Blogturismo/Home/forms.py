@@ -48,3 +48,14 @@ class SolHotelForm(forms.Form):
     lugar = forms.CharField(max_length=40)
     hotel = forms.CharField(max_length=40)
     ingreso = forms.DateField()
+
+class SolExcursionForm(forms.Form):
+
+    
+    nombre = forms.CharField(max_length=40)
+    apellido = forms.CharField(max_length=40)
+    numero = forms.IntegerField()
+    mail = forms.CharField(max_length=100)
+    lugar = forms.CharField(max_length=40)
+    actividad = forms.CharField(max_length=40)
+    salida = forms.DateField()

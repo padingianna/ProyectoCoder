@@ -196,7 +196,7 @@ def solicitudhotel(request):
                         sh_ingreso =form_limpio['ingreso'],)
             solhotel.save()
 
-            return render(request, 'buscar.html')
+            return render(request, 'buscarhotel.html')
 
     else:
         solhotelform =   SolHotelForm()
@@ -216,3 +216,44 @@ def buscarhotel(request):
         respuesta = 'No hay datos'  
 
         return render(request, 'buscarhotel.html',{'respuesta':respuesta})
+
+
+def buscarexcursion(request):
+    
+    if request.GET.get ('buscarexcursion',  False):
+        lugar = request.GET['buscarexcursion']
+        lugares = Excursiones.objects.filter(e_lugar__icontains= lugar)
+    
+        return render( request, 'excursion.html', {'lugares':lugares})
+    
+    else:
+        respuesta = 'No hay datos'  
+
+        return render(request, 'buscarexcursion.html',{'respuesta':respuesta})
+
+
+def solicitudexcursion(request):
+    if request.method == 'POST':
+
+        solexcursionform = SolExcursionForm(request.POST)
+
+        if solexcursionform.is_valid():
+
+            form_limpio = solexcursionform.cleaned_data
+        
+            solexcursion = SolicitudExcursion(
+                        se_nombre =form_limpio['nombre'],
+                        se_apellido =form_limpio['apellido'],
+                        se_numero =form_limpio['numero'],
+                        se_mail =form_limpio['mail'],
+                        se_lugar =form_limpio['lugar'],
+                        se_actividad =form_limpio['actividad'],
+                        se_salida =form_limpio['salida'],)
+            solexcursion.save()
+
+            return render(request, 'buscarexcursion.html')
+
+    else:
+        solexcursionform =   SolExcursionForm()
+
+    return render(  request, 'excursionform.html',{'solexcursionform':solexcursionform})

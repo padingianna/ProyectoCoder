@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block titulo %}
-<h1 class="mb-0">Disfruta tu proximo Alojamiento!</h1>
+<h1 class="mb-0">Disfruta tu proxima Actividad!</h1>
 {% endblock %}
 
 
@@ -31,27 +31,26 @@
         <thead>
             <tr>
                 <td>Destino</td>
-                <td>Hotel</td>
                 <td>Cantidad de dias</td>
-                <td>Tipo de Pension</td>
-                <td>Habitacion</td>
+                <td>Actividad</td>
+                <td>Dificultad</td>
                 <td>Fecha de Salida</td>
                 <td>Fecha de Regreso</td>
-                <td>Costo en Dolares</td>
+                <td>Costo en Dolares</td>.
             </tr>
         </thead>
         <tbody>
             {% if lugares %}
             {% for lugar in lugares %}
             <tr>
-                <td>{{lugar.h_destino}}</td>
-                <td>{{lugar.h_lugar}}</td>
-                <td>{{lugar.h_dias}}</td>
-                <td>{{lugar.h_pension}}</td>
-                <td>{{lugar.h_habitacion}}</td>
-                <td>{{lugar.h_ingreso }}</td>
-                <td>{{lugar.h_salida}}</td>
-                <td>{{lugar.h_costo}}</td>
+                <td>{{lugar.e_lugar}}</td>
+                <td>{{lugar.e_dias}}</td>
+                <td>{{lugar.e_actividad}}</td>
+                <td>{{lugar.e_dificultad}}</td>
+                <td>{{lugar.e_salida }}</td>
+                <td>{{lugar.e_regreso}}</td>
+                <td>{{lugar.e_costo}}</td>
+            
             </tr>        
             {%endfor%}
             {% endif %}
@@ -69,11 +68,12 @@
 
 {% endblock %}
 
+
 {% block casipie %}
 <h2 class="mb-4">Elige ahora tu siguiente AVENTURA!<br>
     Y envianos un mensaje con tu eleccion para que te podamos contactar.</h2>
     <h6> Haz click en la imagen<h6>
-    <a href={% url 'Ingreso de Datos Hotel' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
-        src="static/Home/assets/imagenes/hotel1.jpg" alt="..." /></a>
+    <a href={% url 'Ingreso de Datos Excursion' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+        src="static/Home/assets/imagenes/excursion1.jpg" alt="..." /></a>
 
 {% endblock %}
