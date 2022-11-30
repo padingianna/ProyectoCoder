@@ -151,5 +151,68 @@ def nosotros(request):
 
 
 
+def solicituddestino(request):
+    if request.method == 'POST':
 
+        soldestinoform = SolDestinoForm(request.POST)
+
+        if soldestinoform.is_valid():
+
+            form_limpio = soldestinoform.cleaned_data
+        
+            soldestino = SolicitudDestino(
+                        sd_nombre =form_limpio['nombre'],
+                        sd_apellido =form_limpio['apellido'],
+                        sd_numero =form_limpio['numero'],
+                        sd_mail =form_limpio['mail'],
+                        sd_lugar =form_limpio['lugar'],
+                        sd_salida =form_limpio['salida'],)
+            soldestino.save()
+
+            return render(request, 'buscar.html')
+
+    else:
+        soldestinoform =   SolDestinoForm()
+
+    return render(  request, 'destinoform.html',{'soldestinoform':soldestinoform})
+
+
+def solicitudhotel(request):
+    if request.method == 'POST':
+
+        solhotelform = SolHotelForm(request.POST)
+
+        if solhotelform.is_valid():
+
+            form_limpio = solhotelform.cleaned_data
+        
+            solhotel = SolicitudHotel(
+                        sh_nombre =form_limpio['nombre'],
+                        sh_apellido =form_limpio['apellido'],
+                        sh_numero =form_limpio['numero'],
+                        sh_mail =form_limpio['mail'],
+                        sh_lugar =form_limpio['lugar'],
+                        sh_hotel =form_limpio['hotel'],
+                        sh_ingreso =form_limpio['ingreso'],)
+            solhotel.save()
+
+            return render(request, 'buscar.html')
+
+    else:
+        solhotelform =   SolHotelForm()
+
+    return render(  request, 'hotelform.html',{'solhotelform':solhotelform})
+
+
+def buscarhotel(request):
     
+    if request.GET.get ('buscarhotel',  False):
+        lugar = request.GET['buscarhotel']
+        lugares = Hotel.objects.filter(h_destino__icontains= lugar)
+    
+        return render( request, 'hotel.html', {'lugares':lugares})
+    
+    else:
+        respuesta = 'No hay datos'  
+
+        return render(request, 'buscarhotel.html',{'respuesta':respuesta})

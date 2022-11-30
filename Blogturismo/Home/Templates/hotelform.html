@@ -1,20 +1,20 @@
-{% extends 'crearexperiencia.html' %}
+{% extends 'index.html' %}
 {% load static %}
 
-{% block experiencia %}
+{% block contenido %}
         
         
         
 <form action="" method="post"> {% csrf_token %}
     
-    <H3> Crear tu estadia en Hotel</H3>
+    <H3> Ingresa los dato tuyos y del Hotel</H3>
     <!--<h4>    Destino: <input type='text'  name='destino' id="destino"></h4>
     <h4>    Dias: <input type='text'  name='dias' id="dias"></h4>
     <h4>    Pension: <input type='text'  name='pension' id="pension"></h4>
     <button type="submit" value="Ingresar">Ingresar</button>
     -->
     <table>
-        {{hotelform.as_table}}
+        {{solhotelform.as_table}}
     <table/>
 
     <button type="submit" value="Ingresar">Ingresar</button>

@@ -13,13 +13,13 @@ class Destino (models.Model):
 
 # Clase de hoteles disponibles para alojarse
 class Hotel (models.Model):
-    
+    h_destino = models.CharField(max_length=40)
     h_lugar = models.CharField(max_length=40)
     h_dias = models.IntegerField()
     h_pension = models.CharField(max_length=40)
     h_habitacion = models.CharField(max_length=40)
+    h_ingreso = models.DateField()
     h_salida = models.DateField()
-    h_regreso= models.DateField()
     h_costo = models.DecimalField(max_digits=10,decimal_places=3)
 
 # Clase de excursiones disponibles para realizar
@@ -61,3 +61,25 @@ class CrearHotel (models.Model):
     ch_habitacion = models.CharField(max_length=40)
     ch_salida = models.DateField()
     ch_regreso= models.DateField()
+
+
+
+class SolicitudDestino (models.Model):
+    
+    sd_nombre = models.CharField(max_length=40)
+    sd_apellido = models.CharField(max_length=40)
+    sd_numero = models.IntegerField()
+    sd_mail = models.CharField(max_length=100)
+    sd_lugar = models.CharField(max_length=40)
+    sd_salida = models.DateField()
+
+
+class SolicitudHotel (models.Model):
+    
+    sh_nombre = models.CharField(max_length=40)
+    sh_apellido = models.CharField(max_length=40)
+    sh_numero = models.IntegerField()
+    sh_mail = models.CharField(max_length=100)
+    sh_lugar = models.CharField(max_length=40)
+    sh_hotel = models.CharField(max_length=40)
+    sh_ingreso = models.DateField()

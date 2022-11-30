@@ -5,7 +5,8 @@ from .models import *
 admin.site.register(Destino)
 admin.site.register(Excursiones)
 admin.site.register(Hotel)
-
+admin.site.register(SolicitudDestino)
+admin.site.register(SolicitudHotel)
 admin.site.register(CrearDestino)
 admin.site.register(CrearExcursion)
 admin.site.register(CrearHotel)
