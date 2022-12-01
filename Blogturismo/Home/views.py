@@ -169,7 +169,7 @@ def solicituddestino(request):
                         sd_salida =form_limpio['salida'],)
             soldestino.save()
 
-            return render(request, 'buscar.html')
+            return render(request, 'postingreso.html')
 
     else:
         soldestinoform =   SolDestinoForm()
@@ -196,7 +196,7 @@ def solicitudhotel(request):
                         sh_ingreso =form_limpio['ingreso'],)
             solhotel.save()
 
-            return render(request, 'buscarhotel.html')
+            return render(request, 'postingreso.html')
 
     else:
         solhotelform =   SolHotelForm()
@@ -251,9 +251,42 @@ def solicitudexcursion(request):
                         se_salida =form_limpio['salida'],)
             solexcursion.save()
 
-            return render(request, 'buscarexcursion.html')
+            return render(request, 'postingreso.html')
 
     else:
         solexcursionform =   SolExcursionForm()
 
     return render(  request, 'excursionform.html',{'solexcursionform':solexcursionform})
+
+
+
+
+def solicitudcontacto(request):
+    if request.method == 'POST':
+
+        solcontactoform = SolContactoForm(request.POST)
+
+        if solcontactoform.is_valid():
+
+            form_limpio = solcontactoform.cleaned_data
+        
+            solcontacto = SolicitudContacto(
+                        c_nombre =form_limpio['nombre'],
+                        c_apellido =form_limpio['apellido'],
+                        c_numero =form_limpio['numero'],
+                        c_mail =form_limpio['mail'],
+                        c_pais =form_limpio['pais'],
+                        c_provincia =form_limpio['provincia'],
+                        c_ciudad =form_limpio['ciudad'],
+                        c_consulta =form_limpio['consulta'],)
+            solcontacto.save()
+
+            return render(request, 'postingreso.html')
+
+    else:
+        solcontactoform =   SolContactoForm()
+
+    return render(  request, 'contactoform.html',{'solcontactoform':solcontactoform})
+
+
+

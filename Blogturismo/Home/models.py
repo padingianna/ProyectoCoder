@@ -93,3 +93,15 @@ class SolicitudExcursion (models.Model):
     se_lugar = models.CharField(max_length=40)
     se_actividad = models.CharField(max_length=40)
     se_salida = models.DateField()
+
+
+class SolicitudContacto (models.Model):
+    
+    c_nombre = models.CharField(max_length=40)
+    c_apellido = models.CharField(max_length=40)
+    c_numero = models.IntegerField()
+    c_mail = models.CharField(max_length=100)
+    c_pais = models.CharField(max_length=40)
+    c_provincia = models.CharField(max_length=40)
+    c_ciudad = models.CharField(max_length=40)
+    c_consulta = models.CharField(max_length=100)

@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-0">Gracias por tu consulta!</h1>
+{% endblock %}
+
+
+{% block subtitulo %}
+<h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+    >Te dejamos que sigas explorando otras opciones que tenemos pensadas para vos</h1>
+{% endblock %}
+
+{% block contenido %}
+<section>
+    <div class="text-center">
+        
+        <a href={% url 'buscar' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+            src="static/Home/assets/imagenes/destino1.jpg" alt="..." /></a><a href={% url 'Buscar Hotel' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+                src="static/Home/assets/imagenes/hotel1.jpg" alt="..." /></a><a href={% url 'Buscar Excursion' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+                    src="static/Home/assets/imagenes/excursion1.jpg" alt="..." /></a>
+        <h2 style="background-color:rgb(6, 133, 59);">->Elige tu Proximo Destino!<------->Elige tu Proximo Hotel!<------->Elige tu Proxima Excursion!<-</h2>
+    </div>
+</section>
+
+
+{% endblock %}
+
+{% block pie %}
+<section>
+    <div class="text-center">
+        <h2 style="background-color:rgb(190, 255, 244);">¿No encuentras lo que quieres?<br> Ingresa a Nuestro Blog</h2>
+        <a href={% url 'Crear tu Experiencia' %}> <img class="img-fluid rounded-circle mb-3"  style="width:487px;height:227px" 
+            src="static/Home/assets/imagenes/blog2.jpg" alt="..." /></a>
+        <h5 style="background-color:rgb(190, 255, 244);">Puedes clickear en la imagen e ingresar a nuestro blog.<br> 
+        Ahi podras compartir lo que deseas realizar.<br> 
+        Esto sera visto por nosotros y nos contactaremos con vos.</h5>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+{% endblock %}

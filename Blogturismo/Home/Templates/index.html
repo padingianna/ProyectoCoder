@@ -36,6 +36,7 @@
                     <a class="navbar-brand" href={% url 'Nosotros' %}>Acerca de Nosotros</a>
                     <a class="navbar-brand" href={% url 'Elige tu Experiencia' %}>Elige tu Experiencia</a>
                     <a class="navbar-brand" href={% url 'Crear tu Experiencia' %}>Crear tu Experiencia</a>
+                    <a class="navbar-brand" href={% url 'Contacto' %}>Contacto</a>
                     <!--Ingresar al admin de django
                     <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/">Ingresar</a>-->
                 </div>
@@ -178,7 +179,7 @@
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><a href={% url 'Nosotros' %}>Acerca de Nosotros</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
+                            <li class="list-inline-item"><a href={% url 'Contacto' %}>Contacto</a></li>
                             <li class="list-inline-item">⋅</li>
                         
                         </ul>

@@ -25,6 +25,7 @@ urlpatterns = [
     path( 'Buscar Excursion', views.buscarexcursion,name='Buscar Excursion'),
     path('prueba', views.prueba,name='prueba'),
     path('Ingreso de Datos Destino', views.solicituddestino,name='Ingreso de Datos Destino'),
+    path('Contacto', views.solicitudcontacto,name='Contacto'),
     path('Ingreso de Datos Excursion', views.solicitudexcursion,name='Ingreso de Datos Excursion'),
     path('Crear tu Excursion', views.crearexcursion,name='Crear tu Excursion'),
     path('Ingreso de Datos Hotel', views.solicitudhotel,name='Ingreso de Datos Hotel'),
