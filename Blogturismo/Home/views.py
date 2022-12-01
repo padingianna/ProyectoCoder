@@ -12,8 +12,7 @@ def index1(request):
 
 """
 def versaludo(request):
-    destino= Destino(d_lugar = 'BSAS', d_dias = 4, d_pension = 'Completa')
-    return render( request, 'saludo.html', { 'lugar': destino.d_lugar, 'dias': destino.d_dias, 'pension': destino.d_pension})
+    return render( request, 'prueba.html')
 """
 """
 def destinos(request):

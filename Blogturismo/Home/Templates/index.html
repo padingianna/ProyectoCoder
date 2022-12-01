@@ -28,6 +28,30 @@
                         background-attachment: fixed;
                         background-size: 100% 100%;
                         }
+                        
+                    
+                    
+                    div.transbox {
+                        margin: 30px;
+                        background-color: #ffffff;
+                        
+                        opacity: 0.8;
+                    }
+                    
+                    div.transbox h3 {
+                        margin: 0%;
+                        font-weight: bolder;
+                        color: #0000FF;
+                        text-align: center;
+                    }
+
+                    div.transbox h1 {
+                        margin: 0%;
+                        font-weight: bolder;
+                        color: #000000;
+                        text-align: center;
+                    }
+                    
                 </style>
         <nav class="navbar navbar-dark bg-dark static-top">
             {% block botones %}
@@ -59,8 +83,10 @@
             <div class="container-fluid p-0">
                     <div class="showcase-text">
                         {% block subtitulo %}
+                        <div class="transbox">
                         <h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
                             >Conoce nuestra oferta pensada para vos</h1>
+                        </div>  
                         {% endblock %}
                     </div>
             </div>
@@ -154,7 +180,7 @@
             </div>
         </section>-->
         <!-- barra de pie de pagina-->
-        
+    
         <section class="call-to-action text-white text-center" id="signup">
             <div class="container position-relative">
                 <div class="row justify-content-center">
