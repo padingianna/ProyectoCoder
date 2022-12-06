@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import *
 from .forms import *
 from datetime import *
+from django.views.generic.edit import *
 
 def saludo(request):
     return HttpResponse('respeta o proceso')
@@ -286,6 +287,10 @@ def solicitudcontacto(request):
         solcontactoform =   SolContactoForm()
 
     return render(  request, 'contactoform.html',{'solcontactoform':solcontactoform})
+
+
+
+
 
 
 

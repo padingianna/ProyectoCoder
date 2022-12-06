@@ -105,3 +105,5 @@ class SolicitudContacto (models.Model):
     c_provincia = models.CharField(max_length=40)
     c_ciudad = models.CharField(max_length=40)
     c_consulta = models.CharField(max_length=100)
+
+

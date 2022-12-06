@@ -33,5 +33,5 @@ urlpatterns = [
     path('crearexperiencia', views.crearexperiencia,name='Crear tu Experiencia'),
     path('experiencia', views.experiencia,name='Elige tu Experiencia'),
     path('nosotros', views.nosotros, name='Nosotros'),
-
+    
 ]

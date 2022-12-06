@@ -1,6 +1,9 @@
 from django import forms
 from .models import SolicitudContacto
 
+from django.contrib.auth.models import * 
+from django.contrib.auth.forms import *
+
 class SolDestinoForm(forms.Form):
 
     lugar = forms.CharField(max_length=40)
@@ -71,3 +74,8 @@ class SolContactoForm (forms.Form):
     provincia = forms.CharField(max_length=40)
     ciudad = forms.CharField(max_length=40)
     consulta = forms.CharField(max_length=100, widget=forms.Textarea(),)
+
+
+
+
+
