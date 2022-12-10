@@ -107,3 +107,11 @@ class SolicitudContacto (models.Model):
     c_consulta = models.CharField(max_length=100)
 
 
+class IngresoBlog (models.Model):
+    
+    nombre = models.CharField(max_length=40)
+    titulo = models.CharField(max_length=40)
+    lugar = models.CharField(max_length=40)
+    comentario = models.TextField(max_length=1000)
+    def __str__(self):
+        return self.nombre

@@ -1,0 +1,77 @@
+
+
+{% extends 'homeblog.html' %}
+
+
+{%block subtitulo%}
+<div class="transbox">
+    <h1 style="background-color:rgb(190, 255, 244); color:rgb(3, 3, 3); "
+        >Bienvenido {{user}} al Blog</h1>
+    </div>  
+    
+
+{% endblock %}
+
+
+
+{% block contenido %}
+        
+        <style>
+            article {background-color:white;
+                    border-radius: 10px;
+                    box-shadow:  2px 2px 2px black;
+                    display: inline-block;
+                    width: 30%;
+                    margin 1rem;
+                    padding: 1rem;
+                    text-align:center
+                    
+                    }
+            article h6{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            article h4{
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            article img {
+                font-size: 90%;
+            }
+            article p {
+                margin: 1rem;
+                min-height: 50px;
+                
+                word-wrap: break-word;
+            }
+            
+            article footer { 
+                font-size: 1rem;}
+            
+
+                <section>
+
+            {% for elemento  in elementos %}
+                <article>
+                    
+                    
+                    <h4>Titulo: {{ elemento.titulo }} - Destino: {{ elemento.lugar }}</h4>
+                    
+                    <p>{{ elemento.comentario }}</p>
+                    <footer>
+
+                    Autor: {{ elemento.nombre }}
+
+                    </footer>
+                
+                </article>
+            </style>
+            
+            {%endfor%}
+            
+
+
+
+{% endblock %}
+
+

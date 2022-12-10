@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Home import views
+from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
     path('', views.index1,name='Home'),
@@ -33,5 +34,15 @@ urlpatterns = [
     path('crearexperiencia', views.crearexperiencia,name='Crear tu Experiencia'),
     path('experiencia', views.experiencia,name='Elige tu Experiencia'),
     path('nosotros', views.nosotros, name='Nosotros'),
-    
+    path('login', views.login_request, name='Login'),
+    path('Registro', views.register, name='Registro'),
+    path('logout', LogoutView.as_view(template_name='logout.html'), name='Logout'),
+    path('homeblog', views.homeblog, name='Home Blog'),
+    path('blog', views.ingresoblog, name='Blog'),
+
+
+
+
+
+
 ]

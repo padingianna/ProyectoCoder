@@ -79,3 +79,22 @@ class SolContactoForm (forms.Form):
 
 
 
+class UserRegisterForm(UserCreationForm):
+
+    email = forms.EmailField()
+    password1: forms.CharField(label='Contraseña', widget=forms.PasswordInput)
+    password1: forms.CharField(label='Repetir la contraseña', widget=forms.PasswordInput)
+    
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']
+        help_texts = {k:'' for k in fields} 
+        
+
+class IngresoBlogForm (forms.Form):
+    
+    b_username = forms.CharField(max_length=40)
+    b_nombre = forms.CharField(max_length=40)
+    b_titulo = forms.CharField(max_length=40)
+    b_lugar = forms.CharField(max_length=40)
+    b_comentario = forms.CharField(max_length=1000)

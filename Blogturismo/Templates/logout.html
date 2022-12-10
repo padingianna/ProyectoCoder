@@ -1,0 +1,25 @@
+{% extends 'homeblog.html' %}
+{% block botones %}
+                <div class="container">
+                    <a class="navbar-brand" href={% url 'Home' %}>Home</a>
+                    
+                    <a class="navbar-brand" href={% url 'Home Blog' %}>Blog</a>
+                    
+                    <a class="btn btn-primary" href={% url 'Login' %}>Login</a>
+                    <a class="btn btn-primary" href={% url 'Registro' %}>Registro</a>
+                    <a class="btn btn-primary" href={% url 'Logout' %}>Logout</a>
+                    
+                    
+                    
+                    <!--Ingresar al admin de django
+                    <a class="btn btn-primary" href="http://127.0.0.1:8000/admin/">Ingresar</a>-->
+                </div>
+            {% endblock %}
+
+{% block subtitulo %}
+
+<h1> Usted se ha deslogueado</h1>
+
+
+
+{% endblock %}
